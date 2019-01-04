@@ -1,0 +1,49 @@
+[
+
+    {
+        "stockname":"AB Inbev",
+        "Ticker": "ABI",
+        "Price": 57.47,
+        "low":56.54,
+        "high":58.45,
+        "Category":"Equity"
+    },
+
+{
+        "stockname":"Aparam",
+        "Ticker": "APAM",
+        "Price": 22.37,
+        "low":21.56,
+        "high":24.48,
+        "Category":"Equity"
+    },
+    {
+        "stockname":"Bpost",
+        "Ticker": "BPOST",
+        "Price": 7.90,
+        "low":7.69,
+        "high":8.03,
+        "Category":"Equity"
+    },
+    {
+        "stockname":"Galapagos",
+        "Ticker": "GLPG",
+        "Price": 79.38,
+        "low":75.12,
+        "high":80.69,
+        "Category":"Equity"
+    },
+    {
+        "stockname":"ING group",
+        "Ticker": "INGA",
+        "Price": 9.35,
+        "low":9.32,
+        "high":10.02,
+        "Category":"Equity"
+    }
+
+
+
+
+
+]

@@ -1,0 +1,42 @@
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+ 
+
+    <div class="form-row">
+    <div class ="form-group col-md-2">
+
+      
+
+      <label for="stockname">stockname</label>
+      <input 
+      ngModel
+      name = "stockname"
+      id="stockname"
+      type="text"
+      class="form-control">
+  </div>
+
+  <div class="form-group col-md-2">
+      <label for="ticker">Ticker</label>
+      <input 
+      ngModel
+      name = "Ticker"
+      id="Ticker"
+      type="text"
+      class="form-control">
+  
+  </div>
+  
+  <div class="form-group col-md-2">
+      <label for="price">price</label>
+      <input 
+      ngModel
+      name = "Price"
+      id="Price"
+      type="number"
+      class="form-control">
+  </div>
+  
+
+</div>
+  
+<button class="btn btn-dark btn-sm" type="submit"> add new stock</button>
