@@ -1,8 +1,9 @@
-
+<app-addbond></app-addbond>
+<br>
 <table class="table table-hover table-dark">
   <thead>
     <tr>
-      <th scope="col">Bond name</th>
+      <th scope="col">Bondname</th>
       <th scope="col">Ticker</th>
       <th scope="col">Price</th>
       <th scope="col">Rate</th>
@@ -12,82 +13,16 @@
     </tr>
   </thead>
 
-    <tr *ngFor="let bond of Bonds">
-      <td>{{bond.Bondname}}</td>
-      <td>{{bond.Ticker}}</td>
-      <td>{{bond.Price| currency:'EUR ' :'code'}} </td>
-      <td>{{bond.Rate | percent}}</td>
-      <td>{{bond.Maturity}} year</td>
-      <td>{{bond.Rating}}</td>
+    <tr *ngFor="let bond of bonds">
+      <td>{{bond.bondname}}</td>
+      <td>{{bond.ticker}}</td>
+      <td>{{bond.price| currency:'EUR ' :'code'}} </td>
+      <td>{{bond.rate | percent}}</td>
+      <td>{{bond.maturity}} year</td>
+      <td>{{bond.rating}}</td>
     </tr>
   
   </tbody>
 </table>
 
 
-<form (ngSubmit)="onSubmit(newBond)" #newBond="ngForm">
-  <div class ="form-group">
-
-      <label for="Bondname">Bondname</label>
-      <input 
-      ngModel
-      name = "Bondname"
-      id="Bondname"
-      type="text"
-      class="form-control">
-  </div>
-
-  <div class="form-group">
-      <label for="Ticker">Ticker</label>
-      <input 
-      ngModel
-      name = "Ticker"
-      id="Ticker"
-      type="text"
-      class="form-control">
-  
-  </div>
-  
-  <div class="form-group">
-      <label for="Price">Price</label>
-      <input 
-      ngModel
-      name = "Price"
-      id="Price"
-      type="number"
-      class="form-control">
-  </div>
-  
-  
-  <div class="form-group">
-    <label for="Rate">Rate</label>
-    <input 
-    ngModel
-    name = "Rate"
-    id="Rate"
-    type="number"
-    class="form-control">
-</div>
-  
-<div class="form-group">
-  <label for="Maturity">Maturity</label>
-  <input 
-  ngModel
-  name = "Maturity"
-  id="Maturity"
-  type="number"
-  class="form-control">
-</div>
-  
-<div class="form-group">
-  <label for="Rating">Rating</label>
-  <input 
-  ngModel
-  name = "Rating"
-  id="Rating"
-  type="text"
-  class="form-control">
-</div>
-
-  
-  <button class="btn btn-primary" type="submit"> add Bond</button>

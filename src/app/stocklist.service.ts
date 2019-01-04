@@ -39,15 +39,14 @@ return stocks;
     );
 }
 
-GetStock(loaded) {
-    if (loaded === 'all') {
-        return this.Stock;
-    }
+GetStock() {
+        return this.Stock.slice();
 }
 
 AddStock(stockname, price, ticker) {
     const newStock = {stockname: stockname,  price: price, ticker: ticker};
     this.Stock.push(newStock);
+    console.log(this.Stock);
 }
 
 

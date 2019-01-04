@@ -1,6 +1,6 @@
+import { BondslistService } from './../bondslist.service';
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
-import { Bond, BondslistService } from '../bondslist.service';
 
 
 @Component({
@@ -9,13 +9,27 @@ import { Bond, BondslistService } from '../bondslist.service';
   styleUrls: ['./bonds.component.css']
 })
 export class BondsComponent implements OnInit {
-  bonds: any[];
 
 
-  constructor( private _BondlistService: BondslistService) {
-this._BondlistService = _BondlistService;
+  bonds = [];
+  BondslistService: BondslistService;
+  subscription;
+
+
+  constructor( BondslistService: BondslistService) {
+this.BondslistService = BondslistService;
  }
  ngOnInit() {
-}
 
-}
+
+    this.BondslistService.FetchBonds();
+
+    this.subscription = this.BondslistService.bonds.subscribe(() => {
+      this.bonds = this.BondslistService.GetBonds();
+    });
+  }
+
+
+  }
+
+

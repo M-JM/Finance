@@ -1,38 +1,38 @@
 [
 
     {
-        "Bondname":"US Gov",
-        "Ticker": "USG",
-        "Price": 1000,
-        "Rate":0.05,
-        "Maturity":10,
-        "Rating": "AA"
+        "bondname":"US Gov",
+        "ticker": "USG",
+        "price": 1000,
+        "rate":0.05,
+        "maturity":10,
+        "rating": "AA"
         
     },
 
 {
-    "Bondname":"Belgium Gov",
-    "Ticker": "BEG",
-    "Price": 1000,
-    "Rate":0.05,
-    "Maturity":5,
-    "Rating": "AAA"
+    "bondname":"Belgium Gov",
+    "ticker": "BEG",
+    "price": 1000,
+    "rate":0.05,
+    "maturity":5,
+    "rating": "AAA"
     },
     {
-        "Bondname":"France Gov",
-        "Ticker": "FRG",
-        "Price": 500,
-        "Rate":0.08,
-        "Maturity":10,
-        "Rating": "AA"
+        "bondname":"France Gov",
+        "ticker": "FRG",
+        "price": 500,
+        "rate":0.08,
+        "maturity":10,
+        "rating": "AA"
     },
     {
-        "Bondname":"Uganda Gov",
-        "Ticker": "UGG",
-        "Price": 1000,
-        "Rate":0.15,
-        "Maturity":10,
-        "Rating": "BBB"
+        "bondname":"Uganda Gov",
+        "ticker": "UGG",
+        "price": 1000,
+        "rate":0.15,
+        "maturity":10,
+        "rating": "BBB"
     }
 
 ]

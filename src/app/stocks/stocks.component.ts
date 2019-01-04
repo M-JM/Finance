@@ -1,5 +1,5 @@
 import { StocklistService } from './../stocklist.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -13,7 +13,6 @@ export class StocksComponent implements OnInit {
 
 stocks = [];
   StocklistService: StocklistService;
-  loaded = 'all';
   subscription;
 
   constructor( StocklistService: StocklistService) {
@@ -24,7 +23,7 @@ this.StocklistService = StocklistService;
     this.StocklistService.FetchStocks();
 
     this.subscription = this.StocklistService.stocks.subscribe(() => {
-      this.stocks = this.StocklistService.GetStock(this.loaded);
+      this.stocks = this.StocklistService.GetStock();
     });
   }
 

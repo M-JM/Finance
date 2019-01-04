@@ -15,9 +15,9 @@ import { BondsComponent } from './bonds/bonds.component';
 import {UserprofileService} from './userprofile.service';
 import {HttpModule} from '@angular/http';
 import {StocklistService} from './stocklist.service';
-import { StockitemComponent } from './stockitem/stockitem.component';
 import { AddstockComponent } from './addstock/addstock.component';
 import { BondslistService } from './bondslist.service';
+import { AddbondComponent } from './addbond/addbond.component';
 
 const routes = [
 
@@ -41,8 +41,8 @@ const routes = [
     PortfolioComponent,
     StocksComponent,
     BondsComponent,
-    StockitemComponent,
-    AddstockComponent
+    AddstockComponent,
+    AddbondComponent
   ],
   imports: [
     BrowserModule,
