@@ -1,3 +1,4 @@
+import { BuyService } from './../buy.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+Buyservice = this.Buyservice;
+bonds;
+stocks;
+date;
+
+  constructor( BuyService: BuyService) {
+    this.Buyservice = BuyService;
+  this.date = Date();
+  }
 
   ngOnInit() {
+
+    this.bonds = this.Buyservice.getBondportfolio();
+    this.stocks = this.Buyservice.getStockportfolio();
+
   }
 
 }

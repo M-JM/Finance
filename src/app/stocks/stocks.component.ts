@@ -1,5 +1,6 @@
 import { StocklistService } from './../stocklist.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { BuyService } from '../buy.service';
 
 
 @Component({
@@ -9,25 +10,29 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StocksComponent implements OnInit {
 
-
-
-stocks = [];
+  selectedStock = [];
+  stocks = [];
   StocklistService: StocklistService;
-  loaded = 'all';
+  BuyService: BuyService;
   subscription;
 
-  constructor( StocklistService: StocklistService) {
+  constructor( StocklistService: StocklistService,
+    BuyService: BuyService) {
 this.StocklistService = StocklistService;
+this.BuyService =  BuyService;
+
    }
 
   ngOnInit() {
-    this.StocklistService.FetchStocks();
-
+    this.stocks = this.StocklistService.GetStock();
     this.subscription = this.StocklistService.stocks.subscribe(() => {
-      this.stocks = this.StocklistService.GetStock(this.loaded);
+      this.stocks = this.StocklistService.GetStock();
     });
   }
 
+  checking(index) {
+    this.BuyService.Selectedstock = this.stocks[index];
+    console.log(this.BuyService.Selectedstock);
 
   }
-
+}

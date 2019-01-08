@@ -1,0 +1,80 @@
+<form (ngSubmit)="onSubmit(buybond)" #buybond="ngForm">
+ 
+
+    <div class="form-row">
+    <div class ="form-group col-sm-1">
+  
+      
+      <label for="Bondname">bondname</label>
+      <input 
+      [ngModel]="selectedBond.bondname"
+      name = "Bondname"
+      id="Bondname"
+      type="text"
+      class="form-control">
+  </div>
+  
+  <div class="form-group col-sm-1">
+      <label for="Ticker">Ticker</label>
+      <input 
+      [ngModel]="selectedBond.ticker"
+      name = "Ticker"
+      id="Ticker"
+      type="text"
+      class="form-control">
+  
+  </div>
+  
+  <div class="form-group col-sm-1">
+      <label for="Price">Price</label>
+      <input 
+      [ngModel]="selectedBond.price"
+      name = "Price"
+      id="Price"
+      type="number"
+      class="form-control">
+  </div>
+  
+  <div class="form-group col-sm-1">
+    <label for="Rate">Rate</label>
+    <input 
+    [ngModel]="selectedBond.rate"
+    name = "Rate"
+    id="Rate"
+    type="number"
+    class="form-control">
+  </div>
+  
+  <div class="form-group col-sm-1">
+    <label for="Maturity">Maturity</label>
+    <input 
+    [ngModel]="selectedBond.maturity"
+    name = "Maturity"
+    id="Maturity"
+    type="number"
+    class="form-control">
+  </div>
+  
+  <div class="form-group col-sm-1">
+    <label for="Rating">Rating</label>
+    <input 
+    [ngModel]="selectedBond.rating"
+    name = "Rating"
+    id="Rating"
+    type="text"
+    class="form-control">
+  </div>
+
+  <div class="form-group col-sm-1">
+      <label for="quantity">Quantity</label>
+      <input 
+      ngModel
+      name = "quantity"
+      id="quantity"
+      type="text"
+      class="form-control">
+    </div>
+  
+  </div>
+  
+  <button class="btn btn-dark btn-sm" type="submit"> buy bond</button>

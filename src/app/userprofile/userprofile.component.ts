@@ -10,13 +10,18 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UserprofileComponent implements OnInit {
 
   UserprofileService: UserprofileService;
+  questions: any[];
 
-  constructor( userprofileService: UserprofileService  ) { this.UserprofileService = userprofileService;}
+  constructor( UserprofileService: UserprofileService  ) { this.UserprofileService = UserprofileService;
+  }
 
 
   ngOnInit() {
+    this.questions = this.UserprofileService.getQuestions();
+    console.log(this.questions);
 
     }
+
     onSubmit(UserForm) {
       if (UserForm.valid) {
         console.log(UserForm.value);
@@ -27,8 +32,8 @@ export class UserprofileComponent implements OnInit {
         UserForm.value.savings,
         UserForm.value.salary,
         UserForm.value.country);
+        console.log(this.UserprofileService.User);
     }
-
 
   }
 

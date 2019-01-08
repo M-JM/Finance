@@ -1,3 +1,67 @@
-<p>
-  portfolio works!
-</p>
+
+<br>
+
+<p><ngb-progressbar [showValue]="true" type="info" [value]="50"></ngb-progressbar></p>
+
+
+<table id="bonds" class="zui-table zui-table-rounded " >
+  <thead>
+    <tr>
+      <th scope="col">Bondname</th>
+      <th scope="col">Ticker</th>
+      <th scope="col">Price</th>
+      <th scope="col">Rate</th>
+      <th scope="col">Maturity</th>
+      <th scope="col">rating</th>
+      <th scope="col">quantity</th>
+      <th scope="col">total value</th>
+      
+
+
+     
+    </tr>
+  </thead>
+
+    <tr *ngFor="let bond of bonds " >
+      <td>{{bond.bondname}}</td>
+      <td>{{bond.ticker}}</td>
+      <td>{{bond.price| currency:'EUR ' :'code'}} </td>
+      <td>{{bond.rate | percent}}</td>
+      <td>{{bond.maturity}} year</td>
+      <td>{{bond.rating}}</td>
+      <td>{{bond.quantity}}</td>
+      <td>{{(bond.price+((bond.price*bond.rate)*bond.maturity))*bond.quantity| currency:'EUR ' :'code'}}</td>
+      <td>{{(date + bond.maturity)}}</td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+
+<br>
+
+<table id="stocks" class="zui-table zui-table-rounded " >
+  <thead>
+    <tr>
+      <th scope="col">Stockname</th>
+      <th scope="col">Ticker</th>
+      <th scope="col">Price</th>
+      <th scope="col">quantity</th>
+      <th scope="col">total value</th>
+
+     
+    </tr>
+  </thead>
+
+    <tr *ngFor="let stock of stocks " >
+      <td>{{stock.stockname}}</td>
+      <td>{{stock.ticker}}</td>
+      <td>{{stock.price| currency:'EUR ' :'code'}}</td>
+      <td>{{stock.quantity}}</td>
+      <td>{{stock.quantity*stock.price}}</td>
+   
+    </tr>
+  
+  </tbody>
+</table>

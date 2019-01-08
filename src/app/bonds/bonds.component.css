@@ -1,0 +1,10 @@
+.clickable {
+    cursor: pointer;
+  }
+#table {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.test {
+  padding : 10px;
+}

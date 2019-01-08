@@ -9,8 +9,8 @@
      
     </tr>
   </thead>
-     <tr *ngFor="let stock of stocks">
-      <td>{{stock.stockname}}</td>
+  <tr *ngFor="let stock of stocks; let index=index" (click)="checking(index)">
+    <td>{{stock.stockname}}</td>
       <td>{{stock.ticker}}</td>
       <td>{{stock.price | currency:'EUR ' :'code' }}</td>
     </tr>
@@ -18,3 +18,4 @@
   </tbody>
 </table>
 
+<app-buystocks></app-buystocks>

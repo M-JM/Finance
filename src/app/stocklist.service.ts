@@ -6,29 +6,25 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class StocklistService {
-    private Stock =  [
-        {
-        'stockname': '',
-        'price': 0,
-        'ticker': '',
-    },
-    ];
+    private Stock =  [];
 
 stocks = new Subject<void>();
 
 constructor(private http: Http) {
     this.http = http;
+    this.FetchStocks();
 }
 
 FetchStocks() {
+
 this.http.get('http://localhost:4200/assets/stocks.json')
 .map((response: Response) => {
     const data = response.json();
 
-const stocks = data.map((Stock) => {
+const stocksA = data.map((Stock) => {
     return { stockname: Stock.stockname, price: Stock.Price, ticker: Stock.Ticker };
 });
-return stocks;
+return stocksA;
 }
 )
 .subscribe((data) => {
@@ -38,16 +34,14 @@ return stocks;
         }
     );
 }
-
-GetStock(loaded) {
-    if (loaded === 'all') {
+GetStock() {
         return this.Stock;
-    }
 }
 
 AddStock(stockname, price, ticker) {
     const newStock = {stockname: stockname,  price: price, ticker: ticker};
     this.Stock.push(newStock);
+    console.log(this.Stock);
 }
 
 

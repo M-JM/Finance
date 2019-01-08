@@ -1,0 +1,50 @@
+<form (ngSubmit)="onSubmit(buystock)" #buystock="ngForm">
+ 
+
+  <div class="form-row">
+  <div class ="form-group col-sm-1">
+
+    
+    <label for="Stockname">Stockname</label>
+    <input 
+    [ngModel]="selectedStock.stockname"
+    name = "Stockname"
+    id="Stockname"
+    type="text"
+    class="form-control">
+</div>
+
+<div class="form-group col-sm-1">
+    <label for="ticker">Ticker</label>
+    <input 
+    [ngModel]="selectedStock.ticker"
+    name = "ticker"
+    id="ticker"
+    type="text"
+    class="form-control">
+
+</div>
+
+<div class="form-group col-sm-1">
+    <label for="Price">Price</label>
+    <input 
+    [ngModel]="selectedStock.price"
+    name = "price"
+    id="Price"
+    type="number"
+    class="form-control">
+</div>
+
+<div class="form-group col-sm-1">
+    <label for="quantity">Quantity</label>
+    <input 
+    ngModel
+    name = "quantity"
+    id="quantity"
+    type="text"
+    class="form-control">
+  </div>
+
+</div>
+
+<button class="btn btn-dark btn-sm" type="submit"> buy stock</button>

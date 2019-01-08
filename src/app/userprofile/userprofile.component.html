@@ -56,7 +56,20 @@
       type="text"
       id="country"
       class="form-control">
+    </div>
   
-  </div>
+    <div *ngFor="let surveyQuestion of questions" > {{surveyQuestion.question}}
+            <div  > 
+                    <div class="row">
+                            <div class="col-4">
+                    <div *ngFor="let surveyAnswer of surveyQuestion.answers" class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item" >{{surveyAnswer.answer}}</a>
+                        </div>
+                    </div>
+                          </div>
+               </div>
+       </div>
+      
+  
 
 <button class="btn btn-primary" type="submit"> Save profile </button>

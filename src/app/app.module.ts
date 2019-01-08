@@ -1,3 +1,4 @@
+import { BuyService } from './buy.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule} from '@angular/router';
@@ -15,9 +16,12 @@ import { BondsComponent } from './bonds/bonds.component';
 import {UserprofileService} from './userprofile.service';
 import {HttpModule} from '@angular/http';
 import {StocklistService} from './stocklist.service';
-import { StockitemComponent } from './stockitem/stockitem.component';
 import { AddstockComponent } from './addstock/addstock.component';
 import { BondslistService } from './bondslist.service';
+import { AddbondComponent } from './addbond/addbond.component';
+import { BuystocksComponent } from './buystocks/buystocks.component';
+import { BuybondsComponent } from './buybonds/buybonds.component';
+import { FilterPipe } from './filter.pipe';
 
 const routes = [
 
@@ -41,8 +45,11 @@ const routes = [
     PortfolioComponent,
     StocksComponent,
     BondsComponent,
-    StockitemComponent,
-    AddstockComponent
+    AddstockComponent,
+    AddbondComponent,
+    BuystocksComponent,
+    BuybondsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,7 @@ const routes = [
     FormsModule,
     HttpModule,
   ],
-  providers: [UserprofileService, StocklistService, BondslistService],
+  providers: [UserprofileService, StocklistService, BondslistService, BuyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
